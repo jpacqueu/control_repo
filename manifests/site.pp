@@ -4,7 +4,9 @@ node default {
   content => 'This is a readme',
   owner   => 'root',
   }
-  file {'/root/README':
-  owner   => 'root',
+  user {'testuser puppet':
+  name => testuser_puppet,
+  gid => 52,
+  home => '/home/testpuppet',
   }
 }
